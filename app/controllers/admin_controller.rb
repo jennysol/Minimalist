@@ -6,7 +6,7 @@ class AdminController < ApplicationController
   end
 
   def current_admin? #True or false
-    if current_admin.pressent?
+    if current_admin.present?
       true
     else
       false
