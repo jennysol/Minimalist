@@ -1,0 +1,22 @@
+<h4>Admins</h4><br>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admins.each do |admin| %>
+      <tr>
+        <th scope="row"><%= admin.id %></th>
+        <td><%= admin.name %></td>
+        <td><%= admin.email %></td>
+        <td><%= admin.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
