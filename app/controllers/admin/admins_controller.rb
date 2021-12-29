@@ -34,6 +34,12 @@ class Admin::AdminsController < AdminController
     end
   end
 
+  def destroy
+    @admin = Admin.find(params[:id])
+    @admin.destroy
+    redirect_to admin_admins_path
+  end
+
   private
 
   def form_params
