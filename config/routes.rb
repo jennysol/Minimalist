@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do 
     root to: "home#index"
     resources :admins
+    resources :users, only: :index
   end
 
   root to: "user/timeline#index"
