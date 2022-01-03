@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   root to: "user/timeline#index"
 
   namespace :user do 
-
+    get 'profile', to: "profile#show"
+    resources :posts, only: :create
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
