@@ -1,4 +1,4 @@
-class User::PostController < UserController
+class User::PostsController < UserController
 
   def create
     f_params = form_params.merge(user: current_user)
