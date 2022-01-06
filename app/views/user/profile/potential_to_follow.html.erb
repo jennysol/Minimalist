@@ -13,6 +13,7 @@
         <div class="card-body">
           Email:<p class="card-text text-muted"><%= user.email %></p>
           Telefone:<p class="card-text text-muted"><%= user.phone %></p>
+          <%= link_to("Seguir", user_follow_path(user), method: :post, class: "btn btn-success")%>
         </div>
       </div>
     </div>
