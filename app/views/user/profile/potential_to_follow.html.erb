@@ -2,14 +2,7 @@
   <% @potential_to_follow.each do |user| %>
     <div class="col-lg-4">
       <div class="card">
-        <h5 class="card-header">
-          <%= image_tag(user.avatar, class: "ui-w-100-forced rounded-circle mr-3", style: "width: 90px; height: 90px") %> <%= user.name %>
-          <br/>
-          <div class="mt-2">
-            <span style="font-size:14px;">Seguidores:</span> <span style="font-size:16px;" class="badge badge-info mr-3"><%= user.followers.count %></span>
-            <span style="font-size:14px;">Seguindo:</span> <span style="font-size:16px;" class="badge badge-info"><%= user.following.count %></span>
-          </div>
-        </h5>
+        <%= render("user_card_header", user: user) %>
         <div class="card-body">
           Email:<p class="card-text text-muted"><%= user.email %></p>
           Telefone:<p class="card-text text-muted"><%= user.phone %></p>
