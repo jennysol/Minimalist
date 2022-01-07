@@ -1,5 +1,5 @@
 <div class="card text-white bg-dark mb-3 mt-3">
-  <div class="card-header"><%= post.user.name %></div>
+  <div class="card-header"><%= link_to post.user.name, post.user == current_user ? user_profile_path : user_user_path(post.user) %></div>
   <div class="card-body">
     <small class="text-muted"><%= post.created_at.strftime("%d/%n/%Y %H:%M") %></small>
     <p class="card-text"><%= post.body %></p>
