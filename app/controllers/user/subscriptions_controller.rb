@@ -7,5 +7,14 @@ class User::SubscriptionsController < UserController
 
     redirect_to user_potential_to_follow_path
   end
+
+  def unfollow
+    user = User.find_by(id: params[:id])
+
+    subscription = Subscription.find_by(followed_by: current_user, followed: user) 
+    subscription.destroy
+
+    redirect_to user_following_path
+  end
 	
 end
