@@ -1,4 +1,4 @@
-<div class="card text-white bg-dark mb-3 mt-3">
+<div class="card text-white bg-dark mb-3 mt-3" style="font-size: 17px;">
   <div class="card-header">
     <%= link_to post.user.name, post.user == current_user ? user_profile_path : user_user_path(post.user) %>
     <% if post.user == current_user %>
@@ -24,4 +24,8 @@
   <div class="d-flex">
     <button type="submit" class="btn btn-sm btn-primary ml-auto">Enviar</button>
   </div>
+<% end %>
+
+<% post.comments.order(created_at: :desc).each do |comment| %>
+  <%= render("comment_card", comment: comment) %>
 <% end %>
