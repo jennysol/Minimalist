@@ -22,12 +22,12 @@ Rails.application.routes.draw do
         post :like_toggle
       end
     end
-    resources :users, only: :show
 
+    resources :users, only: :show
+    resources :comments, only: [:create, :destroy]
 
     post 'follow/:id', to: "subscriptions#follow", as: :follow
     post 'unfollow/:id', to: "subscriptions#unfollow", as: :unfollow
-
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
