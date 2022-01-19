@@ -6,9 +6,9 @@ class User::CommentsController < UserController
     @post = @comment.post
 
     if @comment.save
-      redirect_to user_profile_path
-    else
-      render "user/profile/show"
+      respond_to do |format|
+        format.js { render "create" }
+      end
     end
   end
 
