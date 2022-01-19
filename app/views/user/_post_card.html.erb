@@ -1,7 +1,7 @@
 <div class="card text-white bg-dark mb-3 mt-3" style="font-size:17px;">
   <div class="card-header">
     <%= image_tag(post.user.avatar, class: "ui-w-100-forced rounded-circle mr-3", style: "width: 30px; height: 30px") %>
-    <%= link_to post.user.name, post.user == current_user ? user_profile_path : user_user_path(post.user) %>
+    <%= link_to post.user.name, post.user == current_user ? user_profile_path : user_user_path(post.user), class: "text-white" %>
     <% if post.user == current_user %>
       <%= link_to user_post_path(post), method: :delete, data: {confirm: "Você tem certeza que deseja apagar esse post?"}, class: "close text-white" do %>
         <span aria-hidden="true">&times;</span>
@@ -44,4 +44,4 @@
   </div>
 </div>
 
-<hr class="bg-secondary">
+<hr class="bg-muted">
