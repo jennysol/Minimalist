@@ -1,6 +1,6 @@
-<div style="height: 100%!important;background-image: url('<%= resource_name == :admin ? image_path('login_bg.jpg') : image_path('login_bg3.png') %>'); background-size: cover">
+<div style="height: 100vh; width: 100vw;  !important;background-image: url('<%= resource_name == :admin ? image_path('login_bg.jpg') : image_path('login_bg3.png') %>'); background-size: cover">
   <div class="offset-4 col-4 authentication-inner py-5">
-    <div class="card">
+    <div class="card col-sm-12" style="height: 80vh">
       <div class="p-4 p-sm-5">
         <div class="d-flex justify-content-center align-items-center pb-2 mb-4">
           <%= image_tag('logo', style: 'height: 90px;') %>
